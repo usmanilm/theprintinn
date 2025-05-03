@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Print Inn offers premium printing, graphic design, marketing, and signage solutions. Trusted by 450+ clients for high-quality results and exceptional service.">
+    <meta name="keywords" content="printing services, graphic design, marketing, signage, shopfronts, banners, posters, business cards, flyers, brochures">
+    <title>The Print Inn | Professional Printing & Design Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f3f5; /* Light background for body */
+        }
+
+        header {
+            background-color: #ffffff; /* White background for header */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+        }
+
+        .navbar-brand img {
+            max-height: 60px; /* Slightly larger logo */
+        }
+
+        .nav-link {
+            font-weight: 500; /* Medium font weight for nav links */
+            color: #343a40; /* Darker text for nav links */
+            transition: color 0.3s ease; /* Smooth transition */
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #007bff; /* Highlight on hover/active */
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #e9ecef; /* Light background for hero section */
+        }
+
+        .hero iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Slightly darker overlay */
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 2rem; /* Add padding to hero content */
+            border-radius: 0.5rem; /* Rounded corners for hero content box */
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem; /* Larger heading */
+            font-weight: 700; /* Bold heading */
+            margin-bottom: 1.5rem;
+            color: white; /* Ensure text is white */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+        }
+
+        .hero-content p {
+            font-size: 1.3rem; /* Larger paragraph text */
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Primary button color */
+            border: none;
+            padding: 0.8rem 2rem; /* Slightly increased button padding */
+            font-size: 1.1rem;
+            font-weight: 500; /* Medium font weight for button */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to button */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+        }
+
+        .btn-primary:active {
+            background-color: #004080; /* Even darker shade on active */
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Smaller shadow on active */
+        }
+
+        .section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.8rem; /* Larger heading */
+            font-weight: 700; /* Bold heading */
+            color: #2c3e50; /* Dark heading color */
+            margin-bottom: 2.5rem; /* Increased margin */
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.2rem; /* Larger paragraph text */
+            color: #666; /* Slightly darker paragraph color */
+            line-height: 1.9; /* Increased line height */
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 80%; /* Limit paragraph width for better readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #about {
+            background-color: #f8f9fa; /* Light background for about section */
+        }
+
+        #about .container {
+            max-width: 90%; /* Increased container width */
+        }
+
+        #about ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #about ul li {
+            margin: 0.75rem 1.5rem; /* Increased margin */
+            font-size: 1.1rem;
+            color: #555; /* Slightly darker list item color */
+            padding: 0.75rem 1.25rem; /* Increased padding */
+            border-radius: 1rem; /* More rounded corners */
+            background-color: #e9ecef; /* Light background for list items */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #about ul li:hover {
+            background-color: #dee2e6; /* Slightly darker background on hover */
+            transform: translateY(-2px);
+        }
+
+        #about ul li:before {
+            content: '•';
+            color: #007bff;
+            margin-right: 0.75rem; /* Increased margin */
+        }
+
+        #solution-process {
+            background-color: #ffffff;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem; /* Increased margin */
+            padding: 2rem; /* Increased padding */
+            border-radius: 1rem;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .process-step:hover {
+            transform: translateY(-0.75rem); /* Increased transform */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow */
+        }
+
+        .process-step .material-icons {
+            font-size: 4rem; /* Larger icon */
+            color: #007bff;
+            margin-bottom: 1.5rem; /* Increased margin */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-step h3 {
+            font-size: 1.75rem; /* Larger heading */
+            color: #2c3e50;
+            margin-bottom: 0.75rem; /* Increased margin */
+            text-align: center;
+        }
+
+        .process-step p {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .step-number {
+            font-size: 1.3rem; /* Larger number */
+            font-weight: 700; /* Bold number */
+            color: #007bff;
+            margin-bottom: 0.75rem; /* Increased margin */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #services {
+            background-color: #ffffff;
+        }
+
+        #services .service-card {
+            padding: 2rem; /* Increased padding */
+            border-radius: 1rem;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 3rem; /* Increased margin */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        #services .service-card:hover {
+            transform: translateY(-0.75rem); /* Increased transform */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow */
+        }
+
+        #services .service-card h5 {
+            font-size: 1.75rem; /* Larger heading */
+            color: #2c3e50;
+            margin-bottom: 1.25rem; /* Increased margin */
+            text-align: left;
+        }
+
+        #services .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #services .service-card ul li {
+            margin-bottom: 0.75rem; /* Increased margin */
+            font-size: 1.1rem;
+            color: #666;
+            text-align: left;
+            margin-right: 1.5rem; /* Increased margin */
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #e9ecef;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        #services img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1.25rem; /* Increased margin */
+            object-fit: cover;
+            max-height: 250px; /* Increased max-height */
+            transition: transform 0.3s ease;
+        }
+
+        #services img:hover{
+            transform: scale(1.03);
+        }
+
+        #portfolio {
+            background-color: #f8f9fa;
+        }
+
+        #portfolio h2 {
+            font-size: 2.8rem; /* Larger heading */
+            font-weight: 700; /* Bold heading */
+            color: #2c3e50;
+            margin-bottom: 2.5rem; /* Increased margin */
+            text-align: center;
+        }
+
+        #portfolio p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-bottom: 3rem; /* Increased margin */
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-0.75rem) scale(1.02); /* Increased transform and scale */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow */
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem 0.5rem 0 0;
+            transition: transform 0.3s ease-in-out;
+            object-fit: cover;
+            max-height: 350px; /* Increased max-height */
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-card-body {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .portfolio-card-title {
+            font-size: 1.75rem; /* Larger heading */
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        #contact {
+            background-color: #ffffff;
+        }
+
+        #contact h2 {
+            font-size: 2.8rem; /* Larger heading */
+            font-weight: 700; /* Bold heading */
+            color: #2c3e50;
+            margin-bottom: 2.5rem; /* Increased margin */
+            text-align: center;
+        }
+
+        #contact p{
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact form {
+            background-color: #f8f9fa; /* Light background for form */
+            padding: 2.5rem; /* Increased padding */
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            margin-bottom: 3rem;
+        }
+
+        #contact form .form-control {
+            border-radius: 0.75rem; /* More rounded corners for form controls */
+            padding: 0.8rem; /* Increased padding */
+            font-size: 1.1rem;
+            border: 1px solid #ced4da; /* Slightly darker border */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #contact form .form-control:focus {
+            border-color: #007bff; /* Highlight border on focus */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Add focus shadow */
+            outline: none;
+        }
+
+        #contact form textarea {
+            resize: vertical;
+            min-height: 120px; /* Increased height for textarea */
+        }
+
+        #contact form .btn-primary {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        #contact form .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact form .btn-primary:active {
+            background-color: #004080;
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #contact .text-center {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        #contact .text-center a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        #contact .text-center a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #343a40; /* Darker footer */
+            color: #ffffff;
+            padding: 1.5rem; /* Increased padding */
+            text-align: center;
+            margin-top: 5rem;
+            border-top: 1px solid #495057;
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 992px) {
+            .navbar-brand img {
+                max-height: 50px;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .section h2 {
+                font-size: 2.5rem;
+            }
+
+            .section p {
+                font-size: 1.1rem;
+            }
+
+            .process-step .material-icons {
+                font-size: 3rem;
+            }
+
+            .process-step h3 {
+                font-size: 1.5rem;
+            }
+
+            .portfolio-card img {
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section h2 {
+                font-size: 2.2rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .process-step {
+                padding: 1.5rem;
+            }
+
+            .process-step h3 {
+                font-size: 1.2rem;
+            }
+
+            #services img {
+                max-height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .section p {
+                font-size: 0.95rem;
+            }
+
+            #about ul li {
+                margin: 0.5rem;
+                font-size: 1rem;
+                padding: 0.75rem;
+            }
+
+            .process-step {
+                padding: 1rem;
+            }
+
+            .process-step h3 {
+                font-size: 1.2rem;
+            }
+
+            .portfolio-card img {
+                max-height: 250px;
+            }
+
+            #contact form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://theprintinn.com/wp-content/uploads/2024/09/printinn_white.png" alt="The Print Inn Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <iframe src="https://www.youtube.com/embed/fzKURp_OJV0?autoplay=1&mute=1&controls=0&loop=1&playlist=fzKURp_OJV0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <div class="hero-content container">
+        <h1>Your Creative Hub for Design, Marketing, and Print Solutions</h1>
+        <p>Conception. Creation. Completion.</p>
+        <a class="btn btn-primary" href="#contact">Let's Connect</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container">
+        <h2>About The Print Inn</h2>
+        <p>
+            At The Print Inn, branded as InfiniteCreations, we pride ourselves on delivering comprehensive creative services.
+            From graphic design and marketing to web development, printing, signage, interior design, and shopfront solutions,
+            we ensure every element of your brand is crafted with creativity and precision. Our services enhance both the
+            visual appeal and functionality of your space, helping your business make a lasting lasting impression.
+        </p>
+    </div>
+</section>
+
+<section id="solution-process" class="section bg-light">
+    <div class="container">
+        <h2>Our Solution Process</h2>
+        <p>
+            Creating a concise and effective brief is crucial for outlining your business. Let's Talk
+        </p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="process-step">
+                    <span class="material-icons">lightbulb</span>
+                    <span class="step-number">Step: 01</span>
+                    <h3>Conception</h3>
+                    <p>Understand the client's goals, challenges, and requirements.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="process-step">
+                    <span class="material-icons">design_services</span>
+                    <span class="step-number">Step: 02</span>
+                    <h3>Creation</h3>
+                    <p>Create detailed designs, including color schemes, typography & imagery.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="process-step">
+                    <span class="material-icons">done_all</span>
+                    <span class="step-number">Step: 03</span>
+                    <h3>Completion</h3>
+                    <p>Collect feedback from the client on the process & final outcome.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section bg-light">
+    <div class="container">
+        <h2>Our Services</h2>
+        <p>
+            To Make SmartSolution. We provide a wide range of creative
+            solutions to help your business thrive. Our team is dedicated to delivering exceptional
+            results that enhance your brand's visibility
+            and impact across all platforms.
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/Graphic_Design-1.jpg" alt="Graphic Design">
+                    <h5>Graphic Design</h5>
+                    <ul>
+                        <li>Color</li>
+                        <li>|</li>
+                        <li>Design</li>
+                        <li>|</li>
+                        <li>Typography</li>
+                        <li>|</li>
+                        <li>Printing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/branding.jpg" alt="Branding Design">
+                    <h5>Branding Design</h5>
+                    <ul>
+                        <li>Color</li>
+                        <li>|</li>
+                        <li>Design</li>
+                        <li>|</li>
+                        <li>Printing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/webdesign.jpg" alt="Web Design & Development">
+                    <h5>Web Design & Development</h5>
+                    <ul>
+                        <li>Color</li>
+                        <li>|</li>
+                        <li>Design</li>
+                        <li>|</li>
+                        <li>Prototyping</li>
+                        <li>|</li>
+                        <li>Testing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/marketing.jpg" alt="Marketing Services">
+                    <h5>Marketing Services</h5>
+                    <ul>
+                        <li>Color</li>
+                        <li>|</li>
+                        <li>Design</li>
+                        <li>|</li>
+                        <li>Box Design</li>
+                        <li>|</li>
+                        <li>Packaging</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/printing.jpg" alt="Printing">
+                    <h5>Printing</h5>
+                    <ul>
+                        <li>Color</li>
+                        <li>|</li>
+                        <li>Design</li>
+                        <li>|</li>
+                        <li>Box Design</li>
+                        <li>|</li>
+                        <li>Packaging</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/signs.jpg" alt="Sign Solutions">
+                    <h5>Sign Solutions</h5>
+                    <ul>
+                        <li>Custom Signage</li>
+                        <li>|</li>
+                        <li>Sign Installation</li>
+                        <li>|</li>
+                        <li>Indoor & Outdoor Signs</li>
+                        <li>|</li>
+                        <li>Branding Solutions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/storefront.jpg" alt="Shopfronts & Shutters">
+                    <h5>Shopfronts & Shutters</h5>
+                    <ul>
+                        <li>Storefront Design</li>
+                        <li>|</li>
+                        <li>Security Shutters</li>
+                        <li>|</li>
+                        <li>Custom Shopfronts</li>
+                        <li>|</li>
+                        <li>Commercial Shutters</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/awning.jpg" alt="Awnings">
+                    <h5>Awnings</h5>
+                    <ul>
+                        <li>Outdoor Shades</li>
+                        <li>|</li>
+                        <li>Retractable Awnings</li>
+                        <li>|</li>
+                        <li>Weather Protection</li>
+                        <li>|</li>
+                        <li>Custom Awnings</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/interior-design.jpg" alt="Interior Design">
+                    <h5>Interior Design</h5>
+                    <ul>
+                        <li>Space Planning</li>
+                        <li>|</li>
+                        <li>Custom Interiors</li>
+                        <li>|</li>
+                        <li>Design Solutions</li>
+                        <li>|</li>
+                        <li>Interior Aesthetics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="section">
+    <div class="container">
+        <h2>Our Portfolio</h2>
+        <p>
+            Here are some of our recent projects. We combine creativity and technical expertise to deliver outstanding results.
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="portfolio-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/01_portfolio.png" alt="Gym Equipment Branding">
+                    <div class="portfolio-card-body">
+                        <h3 class="portfolio-card-title">Gym Equipment Branding</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="portfolio-card">
+                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/02_portfolio.png" alt="Restaurant Rebranding">
+                    <div class="portfolio-card-body">
+                        <h3 class="portfolio-card-title">Restaurant Rebranding</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <video width="100%" controls>
+                <source src="sample-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>
+            We'd love to hear from you!  Please fill out the form below to get in touch with us.
+        </p>
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+        </form>
+        <div class="text-center mt-4">
+            <p>123 Main Street, City | 123-456-7890 | info@printinn.com</p>
+            <a href="#" class="me-2">Facebook</a>
+            <a href="#" class="me-2">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 The Print Inn. All rights reserved. Optimized for SEO and built with care.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.js"></script>
+</body>
+</html>
