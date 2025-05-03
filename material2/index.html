@@ -402,60 +402,87 @@
             min-height: 120px; /* Increased height for textarea */
         }
 
-        #contact form .btn-primary {
+        #contact form .btn {
             padding: 0.8rem 2rem;
             font-size: 1.1rem;
             font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 0.75rem;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        #contact form .btn-primary:hover {
+        #contact form .btn:hover {
             background-color: #0056b3;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        #contact form .btn-primary:active {
+        #contact form .btn:active {
             background-color: #004080;
             transform: translateY(0);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
-        #contact .text-center {
-            margin-top: 2rem;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        #contact .text-center a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        #contact .text-center a:hover {
-            color: #004080;
-            text-decoration: underline;
-        }
-
         footer {
-            background-color: #343a40; /* Darker footer */
-            color: #ffffff;
-            padding: 1.5rem; /* Increased padding */
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            margin-top: 5rem;
-            border-top: 1px solid #495057;
+            border-top: 1px solid #4a5568;
         }
 
         footer p {
-            font-size: 1rem;
-            font-weight: 400;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Responsive adjustments for smaller screens */
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px; /* Increased size */
+            height: 45px;
+            border-radius: 50%;
+            background-color: #4a5568; /* Darker background */
+            color: white;
+            margin: 0 0.75rem; /* Increased margin */
+            font-size: 1.5rem; /* Increased size */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons a:hover {
+            background-color: #007bff;
+            transform: translateY(-2px) scale(1.1); /* Slight lift and scale on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icons a:active {
+            background-color: #004080;
+            transform: translateY(0) scale(1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 992px) {
             .navbar-brand img {
                 max-height: 50px;
@@ -481,6 +508,12 @@
                 font-size: 1.1rem;
             }
 
+            #about ul li {
+                margin: 0.5rem 1rem;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
             .process-step .material-icons {
                 font-size: 3rem;
             }
@@ -489,8 +522,16 @@
                 font-size: 1.5rem;
             }
 
-            .portfolio-card img {
-                max-height: 300px;
+            .process-step p {
+                font-size: 1rem;
+            }
+
+            .portfolio-card-title {
+                font-size: 1.5rem;
+            }
+
+            #contact form {
+                padding: 2rem;
             }
         }
 
@@ -500,31 +541,52 @@
             }
 
             .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 4rem 0;
+                font-size: 1.1rem;
             }
 
             .section h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .section p {
                 font-size: 1rem;
             }
 
+            #about ul li {
+                margin: 0.5rem;
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
             .process-step {
                 padding: 1.5rem;
             }
 
-            .process-step h3 {
-                font-size: 1.2rem;
+            .process-step .material-icons {
+                font-size: 2.5rem;
             }
 
-            #services img {
-                max-height: 200px;
+            .process-step h3 {
+                font-size: 1.3rem;
+            }
+
+            .process-step p {
+                font-size: 0.95rem;
+            }
+
+            .portfolio-card-title {
+                font-size: 1.3rem;
+            }
+
+            #contact form {
+                padding: 1.5rem;
+            }
+
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+                margin: 0 0.5rem;
             }
         }
 
@@ -534,345 +596,444 @@
             }
 
             .hero-content p {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
-            .navbar-nav {
-                text-align: center;
-            }
-
-            .navbar-nav .nav-item {
-                margin-left: 0;
-                margin-right: 0;
+            .btn-primary {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
             }
 
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .section p {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
             }
 
             #about ul li {
+                font-size: 0.9rem;
+                padding: 0.5rem;
                 margin: 0.5rem;
-                font-size: 1rem;
-                padding: 0.75rem;
             }
 
             .process-step {
                 padding: 1rem;
             }
 
+            .process-step .material-icons {
+                font-size: 2rem;
+            }
+
             .process-step h3 {
                 font-size: 1.2rem;
             }
 
-            .portfolio-card img {
-                max-height: 250px;
+            .process-step p {
+                font-size: 0.9rem;
+            }
+
+            .portfolio-card-title {
+                font-size: 1.2rem;
             }
 
             #contact form {
-                padding: 2rem;
+                padding: 1rem;
+            }
+
+            .social-icons a {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+                margin: 0 0.25rem;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/print-inn-logo-new-1536x423-1.png" alt="The Print Inn Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#solution-process">Solution Process</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://theprintinn.com/wp-content/uploads/2024/09/printinn_white.png" alt="The Print Inn Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <main>
+        <section id="home" class="hero">
+            <iframe src="https://player.vimeo.com/video/862735139?background=1&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="hero-content">
+                <h1>Your Vision, Our Creation</h1>
+                <p>Premium Printing, Graphic Design, Marketing & Signage Solutions</p>
+                <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to The Print Inn, where we bring your ideas to life with our comprehensive suite of printing,
+                    graphic design, marketing, and signage solutions. With a passion for creativity and a commitment to
+                    quality, we have proudly served over 450 clients, delivering exceptional results that exceed expectations.
+                </p>
+                <p>
+                    At The Print Inn, we understand that your brand's image is paramount. That's why we offer a wide range of
+                    services tailored to meet your unique needs. Whether you're looking to create eye-catching marketing
+                    materials, establish a strong visual identity, or enhance your business presence with stunning signage,
+                    we have the expertise and resources to make it happen.
+                </p>
+                <ul>
+                    <li>450+ Clients Served</li>
+                    <li>10+ Years of Experience</li>
+                    <li>High-Quality Printing</li>
+                    <li>Custom Graphic Design</li>
+                    <li>Effective Marketing Solutions</li>
+                    <li>Stunning Signage</li>
+                    <li>Fast Turnaround</li>
+                    <li>Exceptional Customer Service</li>
                 </ul>
+                <p>
+                    Our team of experienced professionals is dedicated to providing you with personalized attention and
+                    guidance every step of the way. We combine state-of-the-art technology with time-honored craftsmanship
+                    to ensure that every project is executed to perfection. From concept to completion, we work closely
+                    with you to understand your goals, offer creative solutions, and deliver results that make a lasting
+                    impact.
+                </p>
+                <p>
+                    We believe in building long-term relationships with our clients, and your success is our success.
+                    Let The Print Inn be your trusted partner in bringing your vision to reality. Contact us today to
+                    discover how we can help you elevate your brand and achieve your business objectives.
+                </p>
             </div>
-        </div>
-    </nav>
-</header>
+        </section>
 
-<section id="home" class="hero">
-    <iframe  src="https://www.youtube.com/embed/fzKURp_OJV0?si=EnIm2TN2bkMHKbVD" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    <div class="hero-content container">
-        <h1>Your Creative Hub for Design, Marketing, and Print Solutions</h1>
-        <p>Conception. Creation. Completion.</p>
-        <a class="btn btn-primary" href="#contact">Let's Connect</a>
-    </div>
-</section>
-
-<section id="about" class="section">
-    <div class="container">
-        <h2>About The Print Inn</h2>
-        <p>
-            At The Print Inn, branded as InfiniteCreations, we pride ourselves on delivering comprehensive creative services.
-            From graphic design and marketing to web development, printing, signage, interior design, and shopfront solutions,
-            we ensure every element of your brand is crafted with creativity and precision. Our services enhance both the
-            visual appeal and functionality of your space, helping your business make a lasting lasting impression.
-        </p>
-    </div>
-</section>
-
-<section id="solution-process" class="section bg-light">
-    <div class="container">
-        <h2>Our Solution Process</h2>
-        <p>
-            Creating a concise and effective brief is crucial for outlining your business. Let's Talk
-        </p>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="process-step">
-                    <span class="material-icons">lightbulb</span>
-                    <span class="step-number">Step: 01</span>
-                    <h3>Conception</h3>
-                    <p>Understand the client's goals, challenges, and requirements.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="process-step">
-                    <span class="material-icons">design_services</span>
-                    <span class="step-number">Step: 02</span>
-                    <h3>Creation</h3>
-                    <p>Create detailed designs, including color schemes, typography & imagery.</p>
-</div>
-            </div>
-            <div class="col-md-4">
-                <div class="process-step">
-                    <span class="material-icons">done_all</span>
-                    <span class="step-number">Step: 03</span>
-                    <h3>Completion</h3>
-                    <p>Collect feedback from the client on the process & final outcome.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="section bg-light">
-    <div class="container">
-        <h2>Our Services</h2>
-        <p>
-            To Make SmartSolution. We provide a wide range of creative
-            solutions to help your business thrive. Our team is dedicated to delivering exceptional
-            results that enhance your brand's visibility
-            and impact across all platforms.
-        </p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/Graphic_Design-1.jpg" alt="Graphic Design">
-                    <h5>Graphic Design</h5>
-                    <ul>
-                        <li>Color</li>
-                        <li>|</li>
-                        <li>Design</li>
-                        <li>|</li>
-                        <li>Typography</li>
-                        <li>|</li>
-                        <li>Printing</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/branding.jpg" alt="Branding Design">
-                    <h5>Branding Design</h5>
-                    <ul>
-                        <li>Color</li>
-                        <li>|</li>
-                        <li>Design</li>
-                        <li>|</li>
-                        <li>Printing</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/webdesign.jpg" alt="Web Design & Development">
-                    <h5>Web Design & Development</h5>
-                    <ul>
-                        <li>Color</li>
-                        <li>|</li>
-                        <li>Design</li>
-                        <li>|</li>
-                        <li>Prototyping</li>
-                        <li>|</li>
-                        <li>Testing</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/marketing.jpg" alt="Marketing Services">
-                    <h5>Marketing Services</h5>
-                    <ul>
-                        <li>Color</li>
-                        <li>|</li>
-                        <li>Design</li>
-                        <li>|</li>
-                        <li>Box Design</li>
-                        <li>|</li>
-                        <li>Packaging</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/printing.jpg" alt="Printing">
-                    <h5>Printing</h5>
-                    <ul>
-                        <li>Color</li>
-                        <li>|</li>
-                        <li>Design</li>
-                        <li>|</li>
-                        <li>Box Design</li>
-                        <li>|</li>
-                        <li>Packaging</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/signs.jpg" alt="Sign Solutions">
-                    <h5>Sign Solutions</h5>
-                    <ul>
-                        <li>Custom Signage</li>
-                        <li>|</li>
-                        <li>Sign Installation</li>
-                        <li>|</li>
-                        <li>Indoor & Outdoor Signs</li>
-                        <li>|</li>
-                        <li>Branding Solutions</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/storefront.jpg" alt="Shopfronts & Shutters">
-                    <h5>Shopfronts & Shutters</h5>
-                    <ul>
-                        <li>Storefront Design</li>
-                        <li>|</li>
-                        <li>Security Shutters</li>
-                        <li>|</li>
-                        <li>Custom Shopfronts</li>
-                        <li>|</li>
-                        <li>Commercial Shutters</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/awning.jpg" alt="Awnings">
-                    <h5>Awnings</h5>
-                    <ul>
-                        <li>Outdoor Shades</li>
-                        <li>|</li>
-                        <li>Retractable Awnings</li>
-                        <li>|</li>
-                        <li>Weather Protection</li>
-                        <li>|</li>
-                        <li>Custom Awnings</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/interior-design.jpg" alt="Interior Design">
-                    <h5>Interior Design</h5>
-                    <ul>
-                        <li>Space Planning</li>
-                        <li>|</li>
-                        <li>Custom Interiors</li>
-                        <li>|</li>
-                        <li>Design Solutions</li>
-                        <li>|</li>
-                        <li>Interior Aesthetics</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="portfolio" class="section">
-    <div class="container">
-        <h2>Our Portfolio</h2>
-        <p>
-            Here are some of our recent projects. We combine creativity and technical expertise to deliver outstanding results.
-        </p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="portfolio-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/01_portfolio.png" alt="Gym Equipment Branding">
-                    <div class="portfolio-card-body">
-                        <h3 class="portfolio-card-title">Gym Equipment Branding</h3>
+        <section id="solution-process" class="section">
+            <h2>Our Solution Process</h2>
+            <p>
+                At The Print Inn, we follow a streamlined and collaborative process to ensure that your project is
+                completed efficiently, effectively, and to your utmost satisfaction. Our proven approach combines
+                creativity, expertise, and attention to detail to deliver exceptional results every time.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-step">
+                            <span class="material-icons">meeting_room</span>
+                            <div class="step-number">Step 1</div>
+                            <h3>Initial Consultation</h3>
+                            <p>We begin by understanding your needs, goals, and vision for your project. We discuss your ideas,
+                                target audience, and any specific requirements you may have.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-step">
+                            <span class="material-icons">design_services</span>
+                            <div class="step-number">Step 2</div>
+                            <h3>Design & Planning</h3>
+                            <p>Our creative team develops a customized design concept that aligns with your brand identity
+                                and objectives. We present you with initial designs and gather your feedback.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-step">
+                            <span class="material-icons">print</span>
+                            <div class="step-number">Step 3</div>
+                            <h3>Production & Printing</h3>
+                            <p>Using state-of-the-art technology and premium materials, we bring your design to life with
+                                precision and care. We ensure the highest quality standards throughout the production
+                                process.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-step">
+                            <span class="material-icons">local_shipping</span>
+                            <div class="step-number">Step 4</div>
+                            <h3>Delivery & Installation</h3>
+                            <p>We deliver your finished product to your desired location and provide professional
+                                installation services if required. We ensure that everything is set up perfectly and
+                                meets your expectations.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="portfolio-card">
-                    <img src="https://theprintinn.com/wp-content/uploads/2024/09/02_portfolio.png" alt="Restaurant Rebranding">
-                    <div class="portfolio-card-body">
-                        <h3 class="portfolio-card-title">Restaurant Rebranding</h3>
+            <p>
+                Throughout the entire process, we maintain open communication with you, providing updates and
+                addressing any questions or concerns you may have. Our goal is to make the experience as smooth
+                and enjoyable as possible, while delivering results that exceed your expectations.
+            </p>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <p>
+                At The Print Inn, we offer a comprehensive range of services to meet all your printing, graphic design,
+                marketing, and signage needs. Our team of experts is dedicated to delivering high-quality solutions
+                that help you elevate your brand, attract new customers, and achieve your business goals.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="service-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/Printing-Services.jpg" alt="Printing Services">
+                            <h5>Printing Services</h5>
+                            <ul>
+                                <li>Business Cards</li>
+                                <li>Brochures & Flyers</li>
+                                <li>Posters & Banners</li>
+                                <li>Booklets & Catalogs</li>
+                                 <li>Stickers & Labels</li>
+                                <li>Large Format Printing</li>
+                            </ul>
+                            <p>
+                                High-quality printing services for all your business needs. From business cards to
+                                large format printing, we deliver exceptional results with fast turnaround times.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/Graphic-Design.jpg" alt="Graphic Design Services">
+                            <h5>Graphic Design Services</h5>
+                            <ul>
+                                <li>Logo Design</li>
+                                <li>Branding & Identity</li>
+                                <li>Marketing Collateral</li>
+                                <li>Packaging Design</li>
+                                <li>Website Design</li>
+                                <li>Social Media Graphics</li>
+                            </ul>
+                            <p>
+                                Creative and professional graphic design services to help you establish a strong
+                                visual identity and communicate your message effectively.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="service-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/Marketing-Services.jpg" alt="Marketing Services">
+                            <h5>Marketing Services</h5>
+                            <ul>
+                                <li>Marketing Strategy</li>
+                                <li>Digital Marketing</li>
+                                <li>Social Media Management</li>
+                                <li>Email Marketing</li>
+                                <li>Search Engine Optimization (SEO)</li>
+                                <li>Pay-Per-Click (PPC) Advertising</li>
+                            </ul>
+                            <p>
+                                Effective marketing solutions to help you reach your target audience, generate leads,
+                                and grow your business. We offer a full range of digital and traditional marketing services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="service-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/Signage-Services.jpg" alt="Signage Services">
+                            <h5>Signage Services</h5>
+                            <ul>
+                                <li>Shopfront Signage</li>
+                                <li>Banners & Flags</li>
+                                <li>Vehicle Signage</li>
+                                <li>Wayfinding Signage</li>
+                                <li>Exhibition Displays</li>
+                                <li>Safety & Compliance Signage</li>
+                            </ul>
+                            <p>
+                                High-quality signage solutions to enhance your business presence and attract customers.
+                                We offer a wide range of signage options for both indoor and outdoor use.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-4">
-            <video width="100%" controls>
-                <source src="your-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Get in Touch</h2>
-        <p>
-            We'd love to hear from you!  Please fill out the form below to get in touch with us.
-        </p>
-        <form>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+        <section id="portfolio" class="section">
+            <h2>Our Portfolio</h2>
+            <p>
+                We take pride in our work and are passionate about helping our clients achieve their goals.
+                Our portfolio showcases a selection of our recent projects, demonstrating our creativity,
+                expertise, and commitment to quality.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-1.jpg" alt="Project 1">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Business Cards</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-2.jpg" alt="Project 2">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Brochures</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-3.jpg" alt="Project 3">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Signage</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-4.jpg" alt="Project 4">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Logo Design</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-5.jpg" alt="Project 5">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Marketing Campaign</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-card">
+                            <img src="https://theprintinn.com.au/wp-content/uploads/2023/08/portfolio-6.jpg" alt="Project 6">
+                            <div class="portfolio-card-body">
+                                <h4 class="portfolio-card-title">Vehicle Signage</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>
+                Ready to discuss your project or have any questions? Get in touch with us today. Our friendly and
+                knowledgeable team is here to help you with all your printing, graphic design, marketing, and
+                signage needs.
+            </p>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form id="contact-form">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                                <label for="phone">Your Phone Number</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" placeholder="Your Message" id="message" style="height: 150px" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Send Message</button>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <p>&copy; 2024 The Print Inn. All rights reserved.</p>
+            <p>
+                Address: 123 Main Street, Anytown, USA | Phone: +1 (555) 123-4567 | Email:
+                <a href="mailto:info@theprintinn.com">info@theprintinn.com</a>
+            </p>
+            <div class="social-icons">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
-        </form>
-        <div class="text-center mt-4">
-            <p>123 Main Street, City | 123-456-7890 | info@printinn.com</p>
-            <a href="#" class="me-2">Facebook</a>
-            <a href="#" class="me-2">Instagram</a>
-            <a href="#">LinkedIn</a>
         </div>
-    </div>
-</section>
+    </footer>
 
-<footer>
-    <p>© 2025 The Print Inn. All rights reserved. Optimized for SEO and built with care.</p>
-</footer>
+    <script src="https://kit.fontawesome.com/e5272d0a27.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.js"></script>
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || phone === '' || message === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+
+            const formData = {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message
+            };
+
+            console.log(formData);
+
+            alert('Form submitted successfully! We will get back to you soon.');
+            document.getElementById('contact-form').reset();
+
+        });
+    </script>
 </body>
 </html>
